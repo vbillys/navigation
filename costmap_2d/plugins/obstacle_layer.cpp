@@ -364,6 +364,16 @@ void ObstacleLayer::updateBounds(double robot_x, double robot_y, double robot_ya
     raytraceFreespace(clearing_observations[i], min_x, min_y, max_x, max_y);
   }
 
+
+  // patching adhoc
+  // 
+  // 
+  // 
+  //costmap_.reset();
+  resetMaps();
+  //voxel_grid_.reset();
+  ROS_WARN("here I am reseting shit!");
+
   // place the new obstacles into a priority queue... each with a priority of zero to begin with
   for (std::vector<Observation>::const_iterator it = observations.begin(); it != observations.end(); ++it)
   {
